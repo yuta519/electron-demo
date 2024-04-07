@@ -1,6 +1,6 @@
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow } = require("electron");
 // include the Node.js 'path' module at the top of your file
-const path = require('node:path')
+const path = require("node:path");
 
 // modify your existing createWindow() function
 const createWindow = () => {
@@ -8,13 +8,13 @@ const createWindow = () => {
     width: 800,
     height: 600,
     webPreferences: {
-      preload: path.join(__dirname, 'preload.js')
-    }
-  })
+      preload: path.join(__dirname, "preload.js"),
+    },
+  });
 
-  win.loadFile('index.html')
-}
+  win.loadFile("index.html");
+};
 
 app.whenReady().then(() => {
-  createWindow()
-})
+  createWindow();
+});
